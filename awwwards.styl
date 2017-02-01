@@ -1,0 +1,112 @@
+@import "reset.css"
+
+
+
+/*mixins*/
+vendorAll(prop, args)
+    -webkit-{prop} args
+    -moz-{prop} args
+    {prop} args
+
+vender(prop, args)
+    {prop} args
+    -webkit-{prop} args
+
+border-radius()
+    vendorAll('border-radius', arguments)
+
+box-shadow()
+    vendorAll('box-shadow', arguments)
+
+transition()
+    vender('transition', arguments)
+transform()
+    vender('transform', arguments)
+    
+display-flex()
+  display: flex 
+  display: -webkit-box  
+  display: -ms-flexbox 
+  display: -webkit-flex 
+       
+    
+display-flex-direction(arg)
+    flex-direction: arg 
+    -webkit-flex-direction: arg 
+    -ms-flex-direction:arg
+
+display-box-orient(arg)
+        -moz-box-orient: arg    
+        -webkit-box-orient: arg  
+        
+display-flex-pack(arg)
+    -webkit-box-pack: arg
+    ms-flex-pack: arg
+
+display-flex-pack-content(prop, arg)
+     -webkit-{prop}-content: arg
+    {prop}-content: arg
+        
+  
+    
+  
+/*color*/
+background-color=#f4f7f6
+font-color=#202121
+
+
+
+body
+    margin auto
+    font-family Roboto, serif
+    font-size 14px
+    font-weight 300
+    color font-color
+    background background-color
+    overflow-x hidden
+
+.wrapper
+    position relative
+    width 100%
+    min-height 100%
+    padding-top 70px
+    background background-color
+    transition(all .5s ease-in-out)
+    z-index 2
+    
+.wrapper::before
+    content ''
+    display block
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background-color rgba(0,0,0,0.75)
+    z-index 400
+    visibility hidden
+    transition(all .5s ease-in-out)
+    
+    
+.nav-main
+    display-flex()
+    display-flex-direction(column)
+    display-box-orient(vertical)
+    display-flex-pack(justify)
+    display-flex-pack-content(justify, space-between)
+    position absolute
+    top 0
+    left 0
+    bottom 0
+    width 320px
+    height 100vh
+    background background-color
+    overflow-y auto
+    z-index 301
+    transform(translateX(-320px))
+    transition(transform .5s ease-in-out)
+    
+    
+    
+    
+    

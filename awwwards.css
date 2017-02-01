@@ -1,0 +1,64 @@
+@import "reset.css";
+/*mixins*/
+prop-content: arg;
+/*color*/
+body {
+  margin: auto;
+  font-family: Roboto, serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #202121;
+  background: #f4f7f6;
+  overflow-x: hidden;
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  padding-top: 70px;
+  background: #f4f7f6;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  z-index: 2;
+}
+.wrapper::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 400;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+.nav-main {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: justify;
+  ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 320px;
+  height: 100vh;
+  background: #f4f7f6;
+  overflow-y: auto;
+  z-index: 301;
+  transform: translateX(-320px);
+  -webkit-transform: translateX(-320px);
+  transition: transform 0.5s ease-in-out;
+  -webkit-transition: transform 0.5s ease-in-out;
+}
